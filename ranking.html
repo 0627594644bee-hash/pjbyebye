@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ranker - จัดอันดับ</title>
+  <meta name="description" content="จัดอันดับภาพยนตร์ยอดนิยมประจำสัปดาห์ ตามคะแนนความชอบของผู้ชม"/>
+  <link rel="stylesheet" href="css/style.css?v=3"/>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav>
+  <a href="index.html" class="logo-link">
+    <div class="logo-badge">
+      <span class="logo-stars">★★★</span>
+      <span class="logo-icon">🎬</span>
+      <div class="logo-txt">MOVIE<br>RANKER</div>
+    </div>
+
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="ranking.html" class="active">จัดอันดับ</a>
+    <a href="detail.html">รายละเอียด</a>
+    <a href="review.html">บทความ</a>
+    <a href="search.html">การค้นหา</a>
+    <a href="register.html">สมาชิก</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="เปิดเมนู">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====== PAGE CONTENT ====== -->
+<div class="page-wrap">
+
+  <!-- Featured Movie -->
+  <div class="featured">
+    <div class="feat-img-wrap">
+      <div class="trend up">
+        <span class="arr">↑</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/harry_potter.jpg" alt="Harry Potter and the Sorcerer's Stone"/>
+    </div>
+    <div class="feat-info">
+      <div class="feat-badge">⭐ อันดับ 1 ประจำสัปดาห์</div>
+      <div class="feat-title">Harry Potter and the Sorcerer's Stone</div>
+      <p class="feat-desc">
+        แฮร์รี่ พอตเตอร์ เด็กกำพร้าอายุ 11 ปี<br/>
+        ที่ค้นพบว่าตัวเองเป็นพ่อมด<br/>
+        และได้รับจดหมายเชิญให้เรียน<br/>
+        ที่โรงเรียนการทำเวทมนตร์<br/>
+        ฮอกวอตส์ ฮอกวอตส์<br/>
+        เขาได้พบกับ รอน วีสลี<br/>
+        และ เฮอร์ไมโอนี่ เกรนเจอร์
+      </p>
+    </div>
+  </div>
+
+  <!-- Ranking Grid -->
+  <div class="rank-grid">
+
+    <div class="rank-card">
+      <div class="trend down">
+        <span class="arr">↓</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/avengers.jpg" alt="Avengers: Infinity War"/>
+      <div class="rank-info">
+        <div class="rank-en">Avengers: Infinity War</div>
+        <div class="rank-th">(อเวนเจอร์ส: มหาสงครามล้างจักรวาล)</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="trend up">
+        <span class="arr">↑</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/it_chapter_two.jpg" alt="IT: Chapter Two"/>
+      <div class="rank-info">
+        <div class="rank-en">IT: Chapter Two</div>
+        <div class="rank-th">(รีก โฆษะกามีน 2)</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="trend up">
+        <span class="arr">↑</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/death_whisperer2.jpg" alt="Death Whisperer 2"/>
+      <div class="rank-info">
+        <div class="rank-en">Death Whisperer 2</div>
+        <div class="rank-th">รีซอด 2</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="trend up">
+        <span class="arr">↑</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/all_of_us_are_dead.jpg" alt="All of Us Are Dead"/>
+      <div class="rank-info">
+        <div class="rank-en">All of Us Are Dead</div>
+        <div class="rank-th">นรกซอมบี้</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="trend up">
+        <span class="arr">↑</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/bigmouth.jpg" alt="BigMouth"/>
+      <div class="rank-info">
+        <div class="rank-en">BigMouth</div>
+        <div class="rank-th">บิ๊กเมาท์</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="trend down">
+        <span class="arr">↓</span>
+        <div class="line"></div>
+      </div>
+      <img src="images/judge_from_hell.jpg" alt="The Judge from Hell"/>
+      <div class="rank-info">
+        <div class="rank-en">The Judge from Hell</div>
+        <div class="rank-th">ผู้พิพากษาจากนรก</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>🎬 &nbsp; © 2026 Movie Ranker — จัดอันดับหนังยอดฮิตโดยคนรักหนังตัวจริง</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

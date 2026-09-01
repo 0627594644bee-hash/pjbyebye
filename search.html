@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ranker - การค้นหา</title>
+  <meta name="description" content="ค้นหาภาพยนตร์ที่คุณต้องการพร้อมดูคะแนนความนิยม"/>
+  <link rel="stylesheet" href="css/style.css?v=3"/>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav>
+  <a href="index.html" class="logo-link">
+    <div class="logo-badge">
+      <span class="logo-stars">★★★</span>
+      <span class="logo-icon">🎬</span>
+      <div class="logo-txt">MOVIE<br>RANKER</div>
+    </div>
+
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="ranking.html">จัดอันดับ</a>
+    <a href="detail.html">รายละเอียด</a>
+    <a href="review.html">บทความ</a>
+    <a href="search.html" class="active">การค้นหา</a>
+    <a href="register.html">สมาชิก</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="เปิดเมนู">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====== PAGE CONTENT ====== -->
+<div class="page-wrap">
+
+  <!-- Search Bar -->
+  <div class="search-bar-wrap">
+    <span class="s-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="ค้นหาชื่อหนัง..." autocomplete="off"/>
+  </div>
+
+  <!-- Movie List -->
+  <div class="mv-list">
+
+    <!-- รุ่นพี่ -->
+    <div class="mv-item" data-title="รุ่นพี่ senior">
+      <img class="mv-poster" src="images/senior.jpg" alt="รุ่นพี่ Senior"/>
+      <div class="mv-details">
+        <div class="mv-lbl">ชื่อหนัง (Movie Title)<strong>รุ่นพี่ (Senior)</strong></div>
+        <div class="mv-lbl">รหัสหนัง (Movie ID)<strong>MV-2558-RP01</strong></div>
+        <div class="mv-lbl">หลอดความชอบ (Preference / Rating Bar</div>
+        <div class="rating-wrap">
+          <div class="rating-bar">
+            <div class="rating-fill" style="width:80%;">
+              <div class="rating-thumb"></div>
+            </div>
+          </div>
+          <span class="rating-pct">80%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ร่างทรง (The Medium) -->
+    <div class="mv-item" data-title="ร่างทรง the medium">
+      <img class="mv-poster" src="images/the_medium.jpg" alt="ร่างทรง The Medium"/>
+      <div class="mv-details">
+        <div class="mv-lbl">ชื่อหนัง (Movie Title)<strong>ร่างทรง (TheMedium)</strong></div>
+        <div class="mv-lbl">รหัสหนัง (Movie ID)<strong>MV-2564-MD01</strong></div>
+        <div class="mv-lbl">หลอดความชอบ (Preference / Rating Bar)</div>
+        <div class="rating-wrap">
+          <div class="rating-bar">
+            <div class="rating-fill" style="width:90%;">
+              <div class="rating-thumb"></div>
+            </div>
+          </div>
+          <span class="rating-pct">90%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Homestay -->
+    <div class="mv-item" data-title="โฮมสเตย์ homestay">
+      <img class="mv-poster" src="images/homestay.jpg" alt="Homestay โฮมสเตย์"/>
+      <div class="mv-details">
+        <div class="mv-lbl">ชื่อหนัง (Movie Title)<strong>โฮมสเตย์ (Homestay)</strong></div>
+        <div class="mv-lbl">รหัสหนัง (Movie ID)<strong>MV-2561-HS01</strong></div>
+        <div class="mv-lbl">หลอดความชอบ (Preference / Rating Bar)</div>
+        <div class="rating-wrap">
+          <div class="rating-bar">
+            <div class="rating-fill" style="width:85%;">
+              <div class="rating-thumb"></div>
+            </div>
+          </div>
+          <span class="rating-pct">85%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- พี่นาค -->
+    <div class="mv-item" data-title="พี่นาค pee nak">
+      <img class="mv-poster" src="images/pee_nak.jpg" alt="พี่นาค Pee Nak"/>
+      <div class="mv-details">
+        <div class="mv-lbl">ชื่อหนัง (Movie Title)<strong>พี่นาค (Pee Nak)</strong></div>
+        <div class="mv-lbl">รหัสหนัง (Movie ID)<strong>MV-2562-PN01</strong></div>
+        <div class="mv-lbl">หลอดความชอบ (Preference / Rating Bar)</div>
+        <div class="rating-wrap">
+          <div class="rating-bar">
+            <div class="rating-fill" style="width:80%;">
+              <div class="rating-thumb"></div>
+            </div>
+          </div>
+          <span class="rating-pct">80%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>🎬 &nbsp; © 2026 Movie Ranker — จัดอันดับหนังยอดฮิตโดยคนรักหนังตัวจริง</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+

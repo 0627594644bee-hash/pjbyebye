@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ranker - สมาชิก</title>
+  <meta name="description" content="หน้าสมาชิก Movie Ranker เพื่อจัดอันดับและให้คะแนนภาพยนตร์ที่คุณชื่นชอบ"/>
+  <link rel="stylesheet" href="css/style.css?v=3"/>
+  <style>
+    .auth-alert {
+      display: none;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      text-align: center;
+      line-height: 1.45;
+    }
+    .auth-alert.error { display: block; background: rgba(220, 38, 38, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .auth-alert.success { display: block; background: rgba(34, 197, 94, 0.2); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.4); }
+  </style>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav>
+  <a href="index.html" class="logo-link">
+    <div class="logo-badge">
+      <span class="logo-stars">★★★</span>
+      <span class="logo-icon">🎬</span>
+      <div class="logo-txt">MOVIE<br>RANKER</div>
+    </div>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="ranking.html">จัดอันดับ</a>
+    <a href="detail.html">รายละเอียด</a>
+    <a href="review.html">บทความ</a>
+    <a href="search.html">การค้นหา</a>
+    <a href="register.html" class="active">สมาชิก</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="เปิดเมนู">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====== REGISTER FORM ====== -->
+<div class="reg-wrap">
+  <div class="reg-card">
+    <div class="reg-card-title">🎬 สมาชิก</div>
+    <div class="reg-card-sub">เข้าร่วมคอมมูนิตี้คนรักหนัง — บอกคะแนนและแชร์ความคิดเห็นของคุณได้เลย</div>
+
+    <div id="auth-alert" class="auth-alert"></div>
+
+    <form id="reg-form" novalidate>
+
+      <!-- Name -->
+      <div class="form-row">
+        <span class="form-ico">👥</span>
+        <label class="form-lbl" for="f-name">Name</label>
+        <input class="form-inp" type="text" id="f-name" required
+               placeholder="พิมพ์ชื่อของคุณ......" autocomplete="name"/>
+      </div>
+
+      <!-- E-mail -->
+      <div class="form-row">
+        <span class="form-ico">✉️</span>
+        <label class="form-lbl" for="f-email">E-mail</label>
+        <input class="form-inp" type="email" id="f-email" required
+               placeholder="พิมพ์อีเมลของคุณ......" autocomplete="email"/>
+      </div>
+
+      <!-- Key (Password) -->
+      <div class="form-row">
+        <span class="form-ico">🔑</span>
+        <label class="form-lbl" for="f-key">Key</label>
+        <input class="form-inp" type="password" id="f-key" required
+               placeholder="พิมพ์รหัสผ่านของคุณ......" autocomplete="new-password"/>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-row">
+        <span class="form-ico">📞</span>
+        <label class="form-lbl" for="f-phone">Phone</label>
+        <input class="form-inp" type="tel" id="f-phone" required
+               placeholder="พิมพ์เบอร์โทรศัพท์......" autocomplete="tel"/>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-row">
+        <span class="form-ico">⚧️</span>
+        <label class="form-lbl" for="f-gender">Gender</label>
+        <div class="form-sel-wrap">
+          <select class="form-sel" id="f-gender">
+            <option value="male">ชาย</option>
+            <option value="female">หญิง</option>
+            <option value="other">อื่นๆ</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-btns">
+        <button type="submit" class="btn-reg" id="btn-reg">สมัครสมาชิก</button>
+        <button type="button" class="btn-clr" id="btn-clr">ล้างข้อมูล</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- ====== DATABASE VIEWER MODAL (รองรับทั้ง Vercel & Localhost) ====== -->
+<div class="db-modal-overlay" id="db-modal">
+  <div class="db-modal-card">
+    <div class="db-modal-header">
+      <div class="db-modal-title">🗄️ ฐานข้อมูลสมาชิก (Movie Ranker Database)</div>
+      <button class="db-modal-close" id="btn-close-db" aria-label="ปิด">&times;</button>
+    </div>
+    <div class="db-modal-body">
+      <div class="db-table-wrap">
+        <table class="db-table">
+          <thead>
+            <tr>
+              <th>#ID</th>
+              <th>ชื่อ-นามสกุล</th>
+              <th>อีเมล</th>
+              <th>เบอร์โทรศัพท์</th>
+              <th>เพศ</th>
+              <th>วันที่บันทึก</th>
+              <th>จัดการ</th>
+            </tr>
+          </thead>
+          <tbody id="db-table-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="db-modal-footer">
+      <div class="db-count" id="db-count">จำนวนสมาชิก: 0 คน</div>
+      <div class="db-actions">
+        <button type="button" class="btn-db-clear" id="btn-db-clear">ล้างข้อมูลทั้งหมด</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>🎬 &nbsp; © 2026 Movie Ranker — จัดอันดับหนังยอดฮิตโดยคนรักหนังตัวจริง</footer>
+
+<!-- Supabase SDK & Config -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
